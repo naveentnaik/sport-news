@@ -5,7 +5,7 @@ const Navbar = () => {
   const [activeNavItem, setActiveNavItem] = useState("Home");
 
   return (
-    <nav className="py-6 px-2 md:px-[135px] flex flex-row justify-between items-center bg-white">
+    <nav className="py-6 px-2 md:px-[115px] flex flex-row justify-between items-center bg-white">
       <div className="mb-4 md:mb-0">
         <h1 className="text-2xl font-bold italic">Sport News</h1>
       </div>

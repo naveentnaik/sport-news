@@ -1,38 +1,28 @@
 import basketballPlayer from "../assets/hero/basketball-player-action-sunset 1.png";
 import africanWoman from "../assets/hero/beautiful-young-african-woman-sports-clothing-running-against-gray-background 1.png";
 import raceCar from "../assets/hero/fastaccelerating-race-car-formula-one-racing-amid-sunset-generative-ai 1.png";
-import ball from "../assets/hero/basketball_sport_icon_in_minimalist_3d_render_2 1.png"
-
+import ball from "../assets/hero/basketball_sport_icon_in_minimalist_3d_render_2 1.png";
 
 const HeroSection = () => {
   return (
-    <section className="pt-12 pr-[135px] flex  flex-row ">
+    <section className="pt-12 pr-[115px] flex flex-row">
       {/* Left side - main content with circular background */}
       <div className="w-8/12 relative mb-8 md:mb-0">
         <div className="relative">
-          {/* Circular background */}
-          <div className="absolute w-full h-full rounded-full bg-gray-100 -z-10"></div>
-
-          {/* Basketball player image */}
-          <div className="relative left-[42%] z-20">
+          {/* Ball background - moved this higher in the DOM for proper layering */}
+          <div className="absolute left-0 bottom-[8%] z-0">
             <img
-              height="380px"
-              width="520px"
-              src={basketballPlayer}
-              alt="Basketball player in action"
+              src={ball}
+              alt="Basketball background"
+              className="filter grayscale"
+              width={570}
             />
           </div>
-     
-          <div className="relative left-[42%] bottom-[10%] z-100">
-          <img src={ball} height="380px"
-              width="520px" />
-          </div>     
 
           {/* Text overlaid on the circular background */}
-          <div className="absolute top-10 pl-[135px] z-10">
-            <div className="bg-gradient-to-t from-gray-100/90 to-gray-100/0"></div>
-            <h2 className="text-7xl font-black leading-[1.0] ">
-              <span className="text-gray-800 ">TOP</span>
+          <div className="absolute top-10 pl-[115px] z-10">
+            <h2 className="text-7xl font-black leading-[1.0]">
+              <span className="text-gray-800">TOP</span>
               <br />
               <span className="text-gray-800">SCORER TO</span>
               <br />
@@ -41,33 +31,42 @@ const HeroSection = () => {
               </span>
             </h2>
           </div>
+
+          {/* Basketball player image */}
+          <div className="relative left-[40%] z-20">
+            <img
+              width={575}
+              src={basketballPlayer}
+              alt="Basketball player in action"
+            />
+          </div>
         </div>
 
         {/* Description and button below the image */}
         <div className="w-fit mt-4 relative left-[65%] bottom-25">
-          <p className="text-sm text-gray-700 mb-4">
-            The EuroLeague Finals Top Scorer is the <br/> individual award for the
-            player that gained  <br/> the highest points in the EuroLeague Finals
+          <p className="text-md text-gray-800 mb-4">
+            The EuroLeague Finals Top Scorer is the <br /> individual award for
+            the player that gained <br /> the highest points in the EuroLeague
+            Finals
           </p>
-          <button className="bg-[#262626] text-white px-6 py-2  uppercase rounded-md">
+          <button className="bg-[#262626] text-lg text-white px-6 py-2 uppercase rounded-md">
             Continue Reading
           </button>
         </div>
       </div>
 
       {/* Right side - news items */}
-      <div className="w-4/12 flex flex-col items-end ">
+      <div className="w-4/12 pt-10 flex flex-col items-end">
         {/* Today label */}
         <div className="space-y-6">
-          <div className="mb-2">
-            <span className="bg-gray-200 text-gray-600 px-3 py-1 text-xs rounded-md">
+          <div className="mb-4">
+            <span className="bg-gray-200 text-gray-400 px-4 py-1 rounded-sm">
               Today
             </span>
           </div>
 
           {/* First news item */}
-
-          <div className="relative max-w-[270px] rounded-lg overflow-hidden bg-gray-200 shadow-md">
+          <div className="relative max-w-[230px] rounded-lg overflow-hidden bg-gray-200 shadow-md">
             {/* Runner image */}
             <div className="w-full">
               <img
@@ -93,7 +92,7 @@ const HeroSection = () => {
           </div>
 
           {/* Second news item */}
-          <div className="relative  max-w-[270px] rounded-lg overflow-hidden bg-gray-200 shadow-md">
+          <div className="relative max-w-[230px] rounded-lg overflow-hidden bg-gray-200 shadow-md">
             {/* Runner image */}
             <img
               height={233}
