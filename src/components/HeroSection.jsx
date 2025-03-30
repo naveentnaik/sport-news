@@ -20,7 +20,7 @@ const HeroSection = () => {
           </div>
 
           {/* Text overlaid on the circular background */}
-          <div className="absolute top-10 pl-[115px] z-10">
+          <div className="absolute top-10 pl-[115px] z-10 font-sequel-sans tracking-tighter ">
             <h2 className="text-7xl font-black leading-[1.0]">
               <span className="text-gray-800">TOP</span>
               <br />
@@ -43,7 +43,7 @@ const HeroSection = () => {
         </div>
 
         {/* Description and button below the image */}
-        <div className="w-fit mt-4 relative left-[65%] bottom-25">
+        <div className="w-fit mt-4 relative left-[65%] bottom-25 font-dm-sans">
           <p className="text-md text-gray-800 mb-4">
             The EuroLeague Finals Top Scorer is the <br /> individual award for
             the player that gained <br /> the highest points in the EuroLeague
@@ -56,7 +56,7 @@ const HeroSection = () => {
       </div>
 
       {/* Right side - news items */}
-      <div className="w-4/12 pt-10 flex flex-col items-end">
+      <div className="w-4/12 pt-10 flex flex-col items-end font-pt-sans">
         {/* Today label */}
         <div className="space-y-6">
           <div className="mb-4">
@@ -78,14 +78,14 @@ const HeroSection = () => {
             </div>
 
             {/* Text overlay at bottom */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-gray-100/90 to-gray-100/0">
+            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-gray-100/90 from-60% to-gray-100/0 to-100%">
               {/* Race info and date */}
-              <div className="text-gray-500 mb-2 text-sm">
+              <div className="text-gray-500 mb-1 text-xs">
                 Race98 - 03 June 2023
               </div>
 
               {/* Headline */}
-              <h2 className="text-sm font-semibold text-gray-900 leading-tight">
+              <h2 className="text-sm  text-gray-900 leading-tight">
                 Ethiopian runners took the top four spots.
               </h2>
             </div>
@@ -102,12 +102,12 @@ const HeroSection = () => {
             />
 
             {/* Text overlay at bottom */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-gray-100/90 to-gray-100/0">
+            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-gray-100/90 from-60% to-gray-100/0 to-100%">
               {/* Race info and date */}
-              <div className="text-gray-500 mb-2 text-sm">• 01 Jun 2023</div>
+              <div className="text-gray-500 mb-1 text-xs">• 01 Jun 2023</div>
 
               {/* Headline */}
-              <h2 className="text-sm font-semibold text-gray-900 leading-tight">
+              <h2 className="text-sm  text-gray-900 leading-tight">
                 Indy Car Detroit: Dixon quickest in second practice
               </h2>
             </div>

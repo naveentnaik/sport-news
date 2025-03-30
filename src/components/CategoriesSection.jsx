@@ -5,7 +5,7 @@ import pingpong from "../assets/category/red-ping-pong-racket-sports-equipment 1
 
 const CategoriesSection = () => {
   return (
-    <div className="md:px-[115px] pb-10">
+    <div className="md:px-[115px] pb-10 ">
       <h3 className="text-2xl font-semibold mb-6">Category</h3>
       <div className="flex flex-wrap gap-4 justify-center">
         {/* Football */}

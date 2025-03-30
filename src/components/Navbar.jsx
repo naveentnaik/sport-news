@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { IoSearchOutline } from "react-icons/io5";
+import SportNews from "../assets/Sport News.png";
+
 
 const Navbar = () => {
   const [activeNavItem, setActiveNavItem] = useState("Home");
@@ -7,10 +9,10 @@ const Navbar = () => {
   return (
     <nav className="py-6 px-2 md:px-[115px] flex flex-row justify-between items-center bg-white">
       <div className="mb-4 md:mb-0">
-        <h1 className="text-2xl font-bold italic">Sport News</h1>
+        <h1 className="font-darkline text-4xl ">Sport News</h1>
       </div>
 
-      <div className="flex flex-wrap justify-center space-x-2 md:space-x-6">
+      <div className="flex flex-wrap justify-center space-x-2 md:space-x-6 font-dm-sans">
         {[
           "Home",
           "Category",
@@ -31,7 +33,7 @@ const Navbar = () => {
         ))}
       </div>
 
-      <button className="flex justify-center items-center gap-2 bg-[#B8C2CE] text-white px-2 py-1 rounded text-sm">
+      <button className="flex justify-center items-center gap-2 bg-[#B8C2CE] text-white px-2 py-1 rounded text-sm font-dm-sans">
         <IoSearchOutline />
         <span>Search</span>
       </button>

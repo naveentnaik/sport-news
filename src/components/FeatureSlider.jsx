@@ -71,16 +71,16 @@ const FeatureSlider = () => {
     <div className="md:px-[105px] py-6">
       {/* Carousel */}
       
-      <div className="relative">
+      <div className="relative rounded-lg ">
         
-        <Slider  ref={sliderRef} {...settings} >
+        <Slider  ref={sliderRef} {...settings}  >
           {carouselItems.map((item, index) => (
-            <div key={index} className="relative h-96 -mb-[6px] bg-gray-800 overflow-hidden ">
+            <div key={index} className="relative h-[450px] -mb-[6px] bg-gray-800 overflow-hidden ">
               {/* Background image */}
               <img
                 src={item.image}
                 alt={item.tag}
-                className="w-full h-full object-cover brightness-75"
+                className="w-full h-full object-cover brightness-55"
               />
 
               {/* Content overlay */}
@@ -100,16 +100,13 @@ const FeatureSlider = () => {
                   <h2 className="text-4xl font-bold text-white mb-3 leading-tight">
                     {item.title}
                   </h2>
-                  <p className="text-white text-lg">{item.description}</p>
+                  <p className="text-white text-lg leading-tight tracking-tighter">{item.description}</p>
                 </div>
               </div>
             </div>
           ))}
         </Slider>
-      </div>
-
-      {/* Navigation controls */}
-      <div className="flex items-center justify-end py-4 px-8 mx-[9.5px] space-x-4 bg-gray-200">
+        <div className="flex items-center justify-end py-4 px-8 mx-[9.5px] space-x-4 bg-gray-200">
         <button
           onClick={goToPrev}
           className="bg-gray-400 hover:bg-gray-500 text-white hover:text-gray-900 px-5 py-3 rounded transition-colors"
@@ -144,6 +141,10 @@ const FeatureSlider = () => {
           <FaArrowRight />
         </button>
       </div>
+      </div>
+
+      {/* Navigation controls */}
+     
     </div>
   );
 };

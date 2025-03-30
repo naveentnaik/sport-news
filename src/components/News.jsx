@@ -93,10 +93,10 @@ export const News = () => {
               </span>
             </div>
             <div>
-              <div className="text-white text-xs mb-2">
+              <div className="text-white text-md mb-2">
                 Debits - 03 June 2023
               </div>
-              <h2 className="text-4xl font-extrabold text-white leading-tight">
+              <h2 className="text-4xl font-bold text-white leading-tight">
                 DISCOVER THE MEMBER BENEFITS OF USA CYCLING!
               </h2>
             </div>
