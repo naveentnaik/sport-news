@@ -71,7 +71,7 @@ const CategoriesSection = () => {
           ref={el => categoryRefs.current[1] = el} 
           className="flex flex-col gap-3 sm:gap-4 w-full opacity-0 transition-all duration-700"
         >
-          <div className="h-[228px] rounded-lg aspect-square">
+          <div className="lg:h-[228px] rounded-lg aspect-square">
             <img
               src={basketBall}
               alt={t('category.basketball')}
@@ -107,7 +107,7 @@ const CategoriesSection = () => {
           ref={el => categoryRefs.current[3] = el} 
           className="flex flex-col gap-3 sm:gap-4 w-full opacity-0 transition-all duration-700"
         >
-          <div className="h-[228px] rounded-lg aspect-square bg-black p-3 sm:p-4">
+          <div className="lg:h-[228px] rounded-lg aspect-square bg-black p-3 sm:p-4">
             <img
               src={pingpong}
               alt={t('category.tableTennis')}
