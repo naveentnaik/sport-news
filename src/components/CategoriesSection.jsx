@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import {football} from "../assets/category/soccer-ball-green-grass-soccer-field-generative-ai.png";
-import {basketBall} from "../assets/category/close-up-basketball-outdoors.png";
+import {football} from "../assets/category/soccerball.png";
+import {basketBall} from "../assets/category/basketball.png";
 import {car} from "../assets/category/sport-car-is-drifting-track-with-smoke-around-it.png";
 import {pingpong} from "../assets/category/red-ping-pong-racket-sports-equipment.png";
 
