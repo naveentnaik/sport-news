@@ -52,7 +52,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-gradient-to-t from-blue-900 via-blue-700 to-blue-500 text-white min-h-screen flex flex-col items-center p-8">
+    <div className="bg-gradient-to-t from-gray-600 via-gray-400 to-gray-200 text-white min-h-screen flex flex-col items-center p-8">
       <h1 className="text-6xl font-bold mb-6 mt-8">{t("form.contactUs")}</h1>
       
       <p className="text-xl text-center mb-12 max-w-lg">

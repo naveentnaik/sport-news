@@ -7,50 +7,73 @@ import ball from "../assets/hero/basketball_sport_icon_in_minimalist_3d_render_2
 
 const HeroSection = () => {
   const { t } = useTranslation();
-  const [screenSize, setScreenSize] = useState('large');
+  const [screenSize, setScreenSize] = useState("large");
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) {
-        setScreenSize('small');
+        setScreenSize("small");
       } else if (window.innerWidth < 1024) {
-        setScreenSize('medium');
+        setScreenSize("medium");
       } else {
-        setScreenSize('large');
+        setScreenSize("large");
       }
     };
-    
-    handleResize(); 
-    window.addEventListener('resize', handleResize);
-    
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
     // Set isLoaded to true after a short delay to trigger animations
     setTimeout(() => {
       setIsLoaded(true);
     }, 100);
-    
+
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   // Mobile view (small screens) and Medium view (tablets) - now they're identical
-  if (screenSize === 'small' || screenSize === 'medium') {
+  if (screenSize === "small" || screenSize === "medium") {
     return (
       <section className="px-4 py-8">
         {/* Hero Title with animation */}
         <div className="text-center mb-6">
           <h2 className="text-4xl font-black leading-tight font-sequel-sans tracking-tighter">
-            <span className={`inline-block text-gray-800 transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`}>
-              {t('hero.title.line1')}
+            <span
+              className={`inline-block text-gray-800 transition-all duration-700 ${
+                isLoaded
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 -translate-y-8"
+              }`}
+            >
+              {t("hero.title.line1")}
             </span>
             <br />
-            <span className={`inline-block text-gray-800 transition-all duration-700 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              {t('hero.title.line2')}
+            <span
+              className={`inline-block transition-all duration-700 delay-300 relative ${
+                isLoaded
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
+              }`}
+            >
+              {/* Gradient mask layer that applies to the text */}
+              <span
+                className="absolute inset-0 bg-gradient-to-t from-white via-gray-400 to-gray-800 bg-clip-text text-transparent opacity-90"
+                style={{ WebkitBackgroundClip: "text" }}
+              >
+                {t("hero.title.line2")}
+              </span>
+
+              {/* Base text layer (somewhat visible underneath for better gradient effect) */}
+              <span className="text-gray-800 opacity-30">
+                {t("hero.title.line2")}
+              </span>
             </span>
           </h2>
         </div>
-        
+
         {/* Player Image with Background */}
         <div className="relative flex justify-center mb-6">
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 opacity-30">
@@ -65,29 +88,27 @@ const HeroSection = () => {
             alt="Basketball player in action"
             className="relative z-10 max-w-full h-auto animate-float"
             style={{
-              animation: "float 4s ease-in-out infinite"
+              animation: "float 4s ease-in-out infinite",
             }}
           />
         </div>
-        
+
         {/* Description and Button */}
         <div className="text-center mb-8">
-          <p className="text-md text-gray-800 mb-4">
-            {t('hero.description')}
-          </p>
+          <p className="text-md text-gray-800 mb-4">{t("hero.description")}</p>
           <button className="bg-[#262626] text-lg text-white px-6 py-2 uppercase rounded-md">
-            {t('hero.button')}
+            {t("hero.button")}
           </button>
         </div>
-        
+
         {/* Today's News */}
         <div className="mt-8">
           <div className="flex justify-center mb-4">
             <span className="bg-gray-200 text-gray-400 px-4 py-1 rounded-sm">
-              {t('hero.today')}
+              {t("hero.today")}
             </span>
           </div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* First news item */}
             <div className="relative rounded-lg overflow-hidden bg-gray-200 shadow-md">
@@ -98,14 +119,14 @@ const HeroSection = () => {
               />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-gray-100/90 from-60% to-gray-100/0 to-100%">
                 <div className="text-gray-500 mb-1 text-xs">
-                  {t('hero.news.first.source')}
+                  {t("hero.news.first.source")}
                 </div>
                 <h2 className="text-sm text-gray-900 leading-tight">
-                  {t('hero.news.first.headline')}
+                  {t("hero.news.first.headline")}
                 </h2>
               </div>
             </div>
-            
+
             {/* Second news item */}
             <div className="relative rounded-lg overflow-hidden bg-gray-200 shadow-md">
               <img
@@ -114,15 +135,17 @@ const HeroSection = () => {
                 className="w-full h-78 object-cover rounded-md"
               />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-gray-100/90 from-60% to-gray-100/0 to-100%">
-                <div className="text-gray-500 mb-1 text-xs">{t('hero.news.second.source')}</div>
+                <div className="text-gray-500 mb-1 text-xs">
+                  {t("hero.news.second.source")}
+                </div>
                 <h2 className="text-sm text-gray-900 leading-tight">
-                  {t('hero.news.second.headline')}
+                  {t("hero.news.second.headline")}
                 </h2>
               </div>
             </div>
           </div>
         </div>
-        
+
         {/* Add the keyframes for the floating animation */}
         <style jsx>{`
           @keyframes float {
@@ -143,7 +166,7 @@ const HeroSection = () => {
       </section>
     );
   }
-  
+
   // Large screens - keep original layout but add title animation
   return (
     <section className="pt-12 pr-[115px] flex flex-row">
@@ -163,20 +186,53 @@ const HeroSection = () => {
           {/* Text overlaid on the circular background with animation */}
           <div className="absolute top-10 pl-[115px] z-10 font-sequel-sans tracking-tighter">
             <h2 className="text-7xl font-black leading-[1.0]">
-              <span className={`inline-block text-gray-800 transition-all duration-700 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-16'}`}>
-                {t('hero.title.desktop.line1')}
+              <span
+                className={`inline-block text-gray-800 transition-all duration-700 ${
+                  isLoaded
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 -translate-x-16"
+                }`}
+              >
+                {t("hero.title.desktop.line1")}
               </span>
               <br />
-              <span className={`inline-block text-gray-800 transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-16'}`}>
-                {t('hero.title.desktop.line2')}
+              <span
+                className={`inline-block text-gray-800 transition-all duration-700 delay-200 ${
+                  isLoaded
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 -translate-x-16"
+                }`}
+              >
+                {t("hero.title.desktop.line2")}
               </span>
               <br />
-              <span className={`inline-block text-gray-800 transition-all duration-700 delay-400 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-16'}`}>
-                {t('hero.title.desktop.line3')}
+              <span
+                className={`inline-block text-gray-800 transition-all duration-700 delay-400 ${
+                  isLoaded
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 -translate-x-16"
+                }`}
+              >
+                {t("hero.title.desktop.line3")}
               </span>
               <br />
-              <span className={`inline-block text-gray-800 transition-all duration-700 delay-600 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-16'}`}>
-                {t('hero.title.desktop.line4')}
+              <span
+                className={`inline-block transition-all duration-700 delay-600 relative ${
+                  isLoaded
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 -translate-x-16"
+                }`}
+              >
+                <span
+                  className="absolute inset-0 bg-gradient-to-t from-white via-gray-400 to-gray-800 bg-clip-text text-transparent opacity-90"
+                  style={{ WebkitBackgroundClip: "text" }}
+                >
+                  {t("hero.title.desktop.line4")}
+                </span>
+
+                <span className="text-gray-800 opacity-30">
+                  {t("hero.title.desktop.line4")}
+                </span>
               </span>
             </h2>
           </div>
@@ -188,7 +244,7 @@ const HeroSection = () => {
               src={basketballPlayer}
               alt="Basketball player in action"
               style={{
-                animation: "float 4s ease-in-out infinite"
+                animation: "float 4s ease-in-out infinite",
               }}
             />
           </div>
@@ -197,10 +253,10 @@ const HeroSection = () => {
         {/* Description and button below the image */}
         <div className="w-fit mt-4 relative left-[65%] bottom-25 font-dm-sans">
           <p className="text-md text-gray-800 mb-4 max-w-[330px]">
-            {t('hero.description')}
+            {t("hero.description")}
           </p>
           <button className="bg-[#262626] text-lg text-white px-6 py-2 uppercase rounded-md">
-            {t('hero.button')}
+            {t("hero.button")}
           </button>
         </div>
       </div>
@@ -211,7 +267,7 @@ const HeroSection = () => {
         <div className="space-y-6">
           <div className="mb-4">
             <span className="bg-gray-200 text-gray-400 px-4 py-1 rounded-sm">
-              {t('hero.today')}
+              {t("hero.today")}
             </span>
           </div>
 
@@ -231,12 +287,12 @@ const HeroSection = () => {
             <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-gray-100/90 from-60% to-gray-100/0 to-100%">
               {/* Race info and date */}
               <div className="text-gray-500 mb-1 text-xs">
-                {t('hero.news.first.source')}
+                {t("hero.news.first.source")}
               </div>
 
               {/* Headline */}
               <h2 className="text-sm text-gray-900 leading-tight">
-                {t('hero.news.first.headline')}
+                {t("hero.news.first.headline")}
               </h2>
             </div>
           </div>
@@ -254,17 +310,19 @@ const HeroSection = () => {
             {/* Text overlay at bottom */}
             <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-gray-100/90 from-60% to-gray-100/0 to-100%">
               {/* Race info and date */}
-              <div className="text-gray-500 mb-1 text-xs">{t('hero.news.second.source')}</div>
+              <div className="text-gray-500 mb-1 text-xs">
+                {t("hero.news.second.source")}
+              </div>
 
               {/* Headline */}
               <h2 className="text-sm text-gray-900 leading-tight">
-                {t('hero.news.second.headline')}
+                {t("hero.news.second.headline")}
               </h2>
             </div>
           </div>
         </div>
       </div>
-      
+
       {/* Add the keyframes for the floating animation */}
       <style jsx>{`
         @keyframes float {
