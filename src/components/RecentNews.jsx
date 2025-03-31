@@ -11,7 +11,7 @@ const RecentNews = () => {
     <div className="w-full">
       <h3 className="text-2xl font-semibold mb-4">{t("recentNews.title")}</h3>
       <div className=" flex flex-col lg:flex-row gap-4 md:gap-6">
-        {/* Featured news - stacks on mobile, side by side on larger screens */}
+        {/* Featured news  */}
         <div className="w-full lg:w-1/2 relative rounded-sm overflow-hidden bg-gray-200 shadow-md mb-4 md:mb-0">
           <div className="w-full">
             <img

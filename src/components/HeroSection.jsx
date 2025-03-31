@@ -25,7 +25,6 @@ const HeroSection = () => {
     handleResize();
     window.addEventListener("resize", handleResize);
 
-    // Preload all images
     const imagesToPreload = [basketballPlayer, africanWoman, raceCar, ball];
     let loadedCount = 0;
 
@@ -49,7 +48,7 @@ const HeroSection = () => {
     };
   }, []);
 
-  // Mobile view (small screens) and Medium view (tablets) - now they're identical
+  // Mobile view (small screens) and Medium view 
   if (screenSize === "small" || screenSize === "medium") {
     return (
       <section className="px-4 py-8">
@@ -81,7 +80,7 @@ const HeroSection = () => {
                 {t("hero.title.line2")}
               </span>
 
-              {/* Base text layer (somewhat visible underneath for better gradient effect) */}
+              {/* Base text layer  */}
               <span className="text-gray-800 opacity-30">
                 {t("hero.title.line2")}
               </span>
@@ -91,7 +90,6 @@ const HeroSection = () => {
 
         {/* Player Image with Background */}
         <div className="relative flex justify-center mb-6">
-          {/* Enhanced background ball with better visibility */}
           <div 
             className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 transition-opacity duration-1000 ${
               imagesLoaded ? "opacity-30" : "opacity-0"
@@ -203,13 +201,13 @@ const HeroSection = () => {
     );
   }
 
-  // Large screens - keep original layout but add title animation
+  // Large screens 
   return (
     <section className="pt-12 pr-[115px] flex flex-row">
       {/* Left side - main content with circular background */}
       <div className="w-8/12 relative mb-8 md:mb-0">
         <div className="relative">
-          {/* Ball background - moved this higher in the DOM for proper layering */}
+          {/* Ball background */}
           <div className={`absolute left-0 bottom-[8%] z-0 transition-opacity duration-1000 ${
               imagesLoaded ? "opacity-100" : "opacity-0"
             }`}>
@@ -222,7 +220,7 @@ const HeroSection = () => {
             />
           </div>
 
-          {/* Text overlaid on the circular background with animation */}
+         
           <div className="absolute top-10 pl-[115px] z-10 font-sequel-sans tracking-tighter">
             <h2 className="text-7xl font-black leading-[1.0]">
               <span

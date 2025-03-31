@@ -13,7 +13,6 @@ const FeatureSlider = () => {
   const sliderRef = useRef(null);
   const { t } = useTranslation();
 
-  // Sample carousel items
   const carouselItems = [
     {
       tag: t("featureSlider.newsItems.1.tag"),

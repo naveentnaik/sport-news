@@ -48,7 +48,7 @@ const CategoriesSection = () => {
     >
       <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 px-1">{t('category.category')}</h3>
       
-      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+      <div className=" grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         <div 
           ref={el => categoryRefs.current[0] = el} 
           className="flex flex-col gap-3 sm:gap-4 w-full opacity-0 transition-all duration-700"
@@ -71,7 +71,7 @@ const CategoriesSection = () => {
           ref={el => categoryRefs.current[1] = el} 
           className="flex flex-col gap-3 sm:gap-4 w-full opacity-0 transition-all duration-700"
         >
-          <div className="rounded-lg aspect-square">
+          <div className="h-[228px] rounded-lg aspect-square">
             <img
               src={basketBall}
               alt={t('category.basketball')}
@@ -107,7 +107,7 @@ const CategoriesSection = () => {
           ref={el => categoryRefs.current[3] = el} 
           className="flex flex-col gap-3 sm:gap-4 w-full opacity-0 transition-all duration-700"
         >
-          <div className="rounded-lg aspect-square bg-black p-3 sm:p-4">
+          <div className="h-[228px] rounded-lg aspect-square bg-black p-3 sm:p-4">
             <img
               src={pingpong}
               alt={t('category.tableTennis')}

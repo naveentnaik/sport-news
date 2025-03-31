@@ -2,7 +2,6 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import i4 from "../assets/ClubRankings/i4.png";
 
-// Table column definitions
 const tableHeaders = [
   { key: 'matchesPlayed', label: 'MP' },
   { key: 'wins', label: 'W' },
@@ -16,7 +15,6 @@ const tableHeaders = [
 const ClubRankings = ({ rankingsData }) => {
   const { t } = useTranslation();
 
-  // Default data should be defined before it's used
   const defaultRankingsData = [
     {
       name: t("clubRankings.1"),
@@ -80,7 +78,6 @@ const ClubRankings = ({ rankingsData }) => {
     }
   ];
   
-  // Use the provided rankingsData or fall back to defaultRankingsData
   const dataToRender = rankingsData || defaultRankingsData;
 
   return (

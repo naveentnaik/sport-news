@@ -24,7 +24,6 @@ const Navbar = () => {
     { code: "te", name: "తెలుగు" }
   ];
 
-  // Add scroll event listener to close dropdowns on scroll
   useEffect(() => {
     const handleScrollEvent = () => {
       if (mobileMenuOpen) setMobileMenuOpen(false);
@@ -33,7 +32,6 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScrollEvent);
     
-    // Clean up event listener on component unmount
     return () => {
       window.removeEventListener('scroll', handleScrollEvent);
     };
@@ -54,7 +52,7 @@ const Navbar = () => {
       section.scrollIntoView({ behavior: "smooth", block: "start" });
       setActiveNavItem(id);
       setMobileMenuOpen(false);
-      setLanguageDropdownOpen(false); // Also close language dropdown when navigating
+      setLanguageDropdownOpen(false); 
     }
   };
 

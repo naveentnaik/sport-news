@@ -6,7 +6,6 @@ import raceHorse from "../assets/News/race-hose 1.png";
 import sportsman from "../assets/News/sportsman-drinking-water-training-stationary-bike 1.png";
 import cyclist from "../assets/News/cyclist-leads-actionfront-view-man-riding-bicycle-racing-road 1.png";
 
-// Create a map of images for easy reference
 const images = {
   raceHorse,
   cyclist,
@@ -16,8 +15,6 @@ const images = {
 export const News = () => {
   const { t } = useTranslation();
   
-
-  // News data with appropriate IDs
   const newsData = [
     {
       id: 1,
