@@ -221,7 +221,7 @@ const HeroSection = () => {
           </div>
 
          
-          <div className="absolute top-10 pl-[115px] z-10 font-sequel-sans tracking-tighter">
+          <div className="absolute top-10 pl-[115px] z-10 tracking-tighter">
             <h2 className="text-7xl font-black leading-[1.0]">
               <span
                 className={`inline-block text-gray-800 transition-all duration-700 ${
