@@ -5,17 +5,19 @@ import pingpong from "../assets/category/red-ping-pong-racket-sports-equipment 1
 
 const CategoriesSection = () => {
   return (
-    <div className="md:px-[115px] pb-10 ">
-      <h3 className="text-2xl font-semibold mb-6">Category</h3>
-      <div className="flex flex-wrap gap-4 justify-center">
+    <div className="px-3 sm:px-4 lg:px-[115px] pb-6 sm:pb-10">
+      <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 px-1">Category</h3>
+      
+      {/* Always minimum 2 cards per row */}
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         {/* Football */}
-        <div className="flex flex-col gap-4 max-w-[300px] flex-1">
-          <div className="h-[30%] bg-gray-100 p-6 flex items-center justify-center rounded-lg">
-            <h2 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-b from-gray-800 from-0% to-gray-400 to-70%">
+        <div className="flex flex-col gap-3 sm:gap-4 w-full">
+          <div className="h-auto bg-gray-100 p-3 sm:p-4 md:p-6 flex items-center justify-center rounded-lg">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-b from-gray-800 from-0% to-gray-400 to-70%">
               FOOTBALL
             </h2>
           </div>
-          <div className="rounded-lg flex-1">
+          <div className="rounded-lg aspect-square">
             <img
               src={football}
               alt="Football in goal net"
@@ -25,16 +27,16 @@ const CategoriesSection = () => {
         </div>
 
         {/* Basketball */}
-        <div className="flex flex-col gap-4 max-w-[300px] flex-1">
-          <div className="h-[10%] rounded-lg flex-1">
+        <div className="flex flex-col gap-3 sm:gap-4 w-full">
+          <div className="rounded-lg aspect-square">
             <img
               src={basketBall}
               alt="Basketball on court"
               className="w-full h-full object-cover rounded-lg"
             />
           </div>
-          <div className="h-[40%] bg-gray-100 p-6 flex items-center justify-center rounded-lg">
-            <h2 className="text-3xl text-center font-black text-transparent bg-clip-text bg-gradient-to-b from-gray-800 from-0% to-gray-400 to-70%">
+          <div className="h-auto bg-gray-100 p-3 sm:p-4 md:p-6 flex items-center justify-center rounded-lg">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-center font-black text-transparent bg-clip-text bg-gradient-to-b from-gray-800 from-0% to-gray-400 to-70%">
               BASKET
               <br />
               BALL
@@ -43,13 +45,13 @@ const CategoriesSection = () => {
         </div>
 
         {/* Car Sport */}
-        <div className="flex flex-col gap-4 max-w-[300px] flex-1">
-          <div className="h-[30%] bg-gray-100 p-6 flex items-center justify-center rounded-lg">
-            <h2 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-b from-gray-800 from-0% to-gray-400 to-70%">
+        <div className="flex flex-col gap-3 sm:gap-4 w-full">
+          <div className="h-auto bg-gray-100 p-3 sm:p-4 md:p-6 flex items-center justify-center rounded-lg">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-b from-gray-800 from-0% to-gray-400 to-70%">
               CAR SPORT
             </h2>
           </div>
-          <div className="rounded-lg flex-1">
+          <div className="rounded-lg aspect-square">
             <img
               src={car}
               alt="Race car drifting"
@@ -59,16 +61,16 @@ const CategoriesSection = () => {
         </div>
 
         {/* Table Tennis */}
-        <div className="flex flex-col gap-4 max-w-[300px] flex-1">
-          <div className="rounded-lg flex-1 py-4 bg-black">
+        <div className="flex flex-col gap-3 sm:gap-4 w-full">
+          <div className="rounded-lg aspect-square bg-black p-3 sm:p-4">
             <img
               src={pingpong}
               alt="Table tennis paddle and ball"
               className="w-full h-full object-cover rounded-lg"
             />
           </div>
-          <div className="h-[30%] bg-gray-100 p-6 flex items-center justify-center rounded-lg">
-            <h2 className="text-3xl text-center font-black text-transparent bg-clip-text bg-gradient-to-b from-gray-800 from-0% to-gray-400 to-70%">
+          <div className="h-auto bg-gray-100 p-3 sm:p-4 md:p-6 flex items-center justify-center rounded-lg">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-center font-black text-transparent bg-clip-text bg-gradient-to-b from-gray-800 from-0% to-gray-400 to-70%">
               TABLE
               <br />
               TENNIS

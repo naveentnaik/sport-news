@@ -8,39 +8,70 @@ import RecentNews from "./components/RecentNews";
 import ClubRankings from "./components/ClubRankings";
 import SportsArticle from "./components/SportsArticle";
 import ContactForm from "./components/ContactForm";
+import { useEffect } from "react";
+import Lenis from "lenis";
 
 function App() {
-  
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2, 
+      smooth: true,
+      ease: (t) => 1 - Math.pow(1 - t, 2), 
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    return () => lenis.destroy(); 
+  }, []);
+
+
   return (
     <div className="bg-[#F9FAFC]">
       <Navbar />
 
       <main className="container mx-auto">
-       
-        <HeroSection />
+        <section id="home">
+          <HeroSection />
+        </section>
 
-        <CategoriesSection />
+        <section id="category">
+          <CategoriesSection />
+        </section>
 
-        <News />
+        <section id="trending-news">
+          <News />
+        </section>
 
-        <FeatureSlider />
+        <section id="feature-slider">
+          <FeatureSlider />
+        </section>
 
         {/* Recent News and Clubs Ranking */}
-        <section className="md:px-[115px] pt-8 pb-6 flex justify-between gap-6">
-          <div className="w-1/2 flex-1">
-            <RecentNews />
-          </div>
+        <section id="recent-news" className="px-4 md:px-8 lg:px-[115px] pt-8 pb-6">
+          <div className="flex flex-col lg:flex-row gap-6">
+            <div className="w-full lg:w-1/2">
+              <RecentNews />
+            </div>
 
-          <div className="w-1/2 flex-1">
-            <ClubRankings />
+            <div className="w-full lg:w-1/2">
+              <ClubRankings />
+            </div>
           </div>
         </section>
 
         {/* Sports Articles */}
-        <SportsArticle/>
+        <section id="sports-article">
+          <SportsArticle />
+        </section>
 
-        <ContactForm/>
-       
+        <section id="contact">
+          <ContactForm />
+        </section>
       </main>
     </div>
   );

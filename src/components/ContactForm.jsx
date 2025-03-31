@@ -55,7 +55,7 @@ const ContactForm = () => {
       
       <p className="text-xl text-center mb-12 max-w-lg">
         Send us a message using the contact form below,
-        <br />and we'll get back to you in 24 hours.
+        and we'll get back to you in 24 hours.
       </p>
       
       {submitted && (

@@ -128,6 +128,7 @@ const SportsArticle = () => {
     speed: 800,
     slidesToShow: 3,
     slidesToScroll: 1,
+    cssEase: "ease-in-out",
     beforeChange: (_, next) => setCurrentSlide(next),
     arrows: false,
     responsive: [
@@ -153,7 +154,7 @@ const SportsArticle = () => {
   const goToNext = () => sliderRef.current?.slickNext();
 
   return (
-    <section className="md:px-[105px] py-6">
+    <section className="px-4 md:px-8 lg:px-[105px] py-6">
       <h3 className="text-xl font-bold mb-6">Sports Articles</h3>
 
       <div className="relative">
