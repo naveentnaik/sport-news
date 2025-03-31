@@ -8,118 +8,114 @@ import shuttlecocks from "../assets/SportsArticle/three-white-shuttlecocks-badmi
 import basketball from "../assets/SportsArticle/basketball-equipment 1.png";
 import hockyPlayers from "../assets/SportsArticle/hockey-players 1.png";
 import profile from "../assets/SportsArticle/profile.png";
+import { useTranslation } from "react-i18next";
 
 
 const SportsArticle = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef(null);
+   const { t } = useTranslation();
 
   const articles = [
     {
-      category: "Basketball",
-      author: "Alex Will",
+      id: 1,
+      category: t('articles.1.category'), 
+      author: t('articles.1.author'), 
       authorImage: "",
-      title:
-        "5 Exercises Basketball Players Should Be Using To Develop Strength",
-      description:
-        "This article was written by Jake Willhoite from Healthlisted.com Strength in basketball isn’t all about a massive body mass or ripped muscles.",
+      title: t('articles.1.title'), 
+      description: t('articles.1.description'), 
       image: basketball,
-      date:"O5 june 2023",
-      profile:profile
+      date: t('articles.1.date'), 
+      profile: profile
     },
     {
-      category: "Hockey",
-      author: "Paul James",
+      id: 2,
+      category: t('articles.2.category'), 
+      author: t('articles.2.author'), 
       authorImage: "",
-      title:
-        "Golden Knights not to fulfill owner's quest to win Stanley Cup in fifth year",
-      description:
-        "The Badminton World Federation is developing Air Badminton and the country’s governing body, Philippine Badminton Association.",
+      title: t('articles.2.title'),
+      description: t('articles.2.description'),
       image: hockyPlayers,
-      date:"O8 may 2023",
-      profile:profile
-
+      date: t('articles.2.date'),
+      profile: profile
     },
     {
-      category: "Badminton",
-      author: "Emily Landis",
+      id: 3,
+      category: t('articles.3.category'),
+      author: t('articles.3.author'),
       authorImage: "",
-      title: "'Outdoor' Badminton Gets Support From Local Federation",
-      description:
-        "The Badminton World Federation is developing Air Badminton and the country’s governing body, Philippine Badminton Association.",
+      title: t('articles.3.title'), 
+      description: t('articles.3.description'), 
       image: shuttlecocks,
-      date:"O4 apr 2023",
-      profile:profile
+      date: t('articles.3.date'), 
+      profile: profile
     },
     {
-      category: "Football",
-      author: "Mark Johnson",
+      id: 4,
+      category: t('articles.4.category'),
+      author: t('articles.4.author'), 
       authorImage: "",
-      title:
-        "Premier League announces summer schedule for pre-season tournaments",
-      description:
-        "This article was written by Jake Willhoite from Healthlisted.com Strength in basketball isn’t all about a massive body mass or ripped muscles.",
+      title: t('articles.4.title'), 
+      description: t('articles.4.description'), 
       image: basketball,
-      date:"14 aug 2023",
-      profile:profile
-
+      date: t('articles.4.date'), 
+      profile: profile
     },
     {
-      category: "Tennis",
-      author: "Sarah Parker",
+      id: 5,
+      category: t('articles.5.category'), 
+      author: t('articles.5.author'), 
       authorImage: "",
-      title: "Wimbledon preparations affected by unusual British weather",
-      description:
-        "The Badminton World Federation is developing Air Badminton and the country’s governing body, Philippine Badminton Association.",
+      title: t('articles.5.title'), 
+      description: t('articles.5.description'), 
       image: shuttlecocks,
-      date:"22 may 2023",
-      profile:profile
+      date: t('articles.5.date'), 
+      profile: profile
     },
     {
-      category: "Swimming",
-      author: "David Chen",
+      id: 6,
+      category: t('articles.6.category'), 
+      author: t('articles.6.author'), 
       authorImage: "",
-      title: "New Olympic-sized pool opens in downtown metro area",
-      description:
-        "The Badminton World Federation is developing Air Badminton and the country’s governing body, Philippine Badminton Association.",
+      title: t('articles.6.title'), 
+      description: t('articles.6.description'), 
       image: hockyPlayers,
-      date:"29 sep 2023",
-      profile:profile
+      date: t('articles.6.date'), 
+      profile: profile
     },
     {
-      category: "Golf",
-      author: "James Wilson",
+      id: 7,
+      category: t('articles.7.category'),
+      author: t('articles.7.author'), 
       authorImage: "",
-      title: "PGA Tour announces new tournament format for next season",
-      description:
-        "The Badminton World Federation is developing Air Badminton and the country’s governing body, Philippine Badminton Association.",
+      title: t('articles.7.title'), 
+      description: t('articles.7.description'), 
       image: basketball,
-      date:"01 jan 2024",
-      profile:profile
+      date: t('articles.7.date'), 
+      profile: profile
     },
     {
-      category: "Athletics",
-      author: "Lisa Brown",
+      id: 8,
+      category: t('articles.8.category'), 
+      author: t('articles.8.author'), 
       authorImage: "",
-      title:
-        "Local sprinter breaks regional record at university championships",
-      description:
-        "The Badminton World Federation is developing Air Badminton and the country’s governing body, Philippine Badminton Association.",
+      title: t('articles.8.title'), 
+      description: t('articles.8.description'), 
       image: shuttlecocks,
-      date:"14 aug 2023",
-      profile:profile
+      date: t('articles.8.date'),
+      profile: profile
     },
     {
-      category: "Cricket",
-      author: "Raj Patel",
+      id: 9,
+      category: t('articles.9.category'), 
+      author: t('articles.9.author'), 
       authorImage: "",
-      title: "T20 World Cup qualifiers see surprising upsets in group stages",
-      description:
-        "This article was written by Jake Willhoite from Healthlisted.com Strength in basketball isn’t all about a massive body mass or ripped muscles.",
+      title: t('articles.9.title'), 
+      description: t('articles.9.description'), 
       image: hockyPlayers,
-      date:"29 sep 2023",
-      profile:profile
-    },
+      date: t('articles.9.date'), 
+      profile: profile
+    }
   ];
 
   const settings = {
@@ -155,7 +151,7 @@ const SportsArticle = () => {
 
   return (
     <section className="px-4 md:px-8 lg:px-[105px] py-6">
-      <h3 className="text-xl font-bold mb-6">Sports Articles</h3>
+      <h3 className="text-xl font-bold mb-6">{t('articles.heading')}</h3>
 
       <div className="relative">
         <Slider ref={sliderRef} {...settings}>

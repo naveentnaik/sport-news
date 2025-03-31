@@ -10,12 +10,12 @@ const Navbar = () => {
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", id: "home" },
-    { name: "Category", id: "category" },
-    { name: "Trending News", id: "trending-news" },
-    { name: "Recent News", id: "recent-news" },
-    { name: "Clubs Ranking", id: "recent-news" },
-    { name: "Sports Article", id: "sports-article" },
+    { name: t('navItems.home'), id: "home" },
+    { name: t('navItems.category'), id: "category" },
+    { name: t('navItems.trendingNews'), id: "trending-news" },
+    { name: t('navItems.recentNews'), id: "recent-news" },
+    { name: t('navItems.clubRankings'), id: "recent-news" },
+    { name: t('navItems.sportsArticle'), id: "sports-article" },
   ];
 
   const languages = [

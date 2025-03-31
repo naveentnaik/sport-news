@@ -1,27 +1,201 @@
 {
-    "hero": {
-      "title": {
-        "line1": "TOP SCORER TO THE",
-        "line2": "FINAL MATCH",
-        "desktop": {
-          "line1": "TOP",
-          "line2": "SCORER TO",
-          "line3": "THE FINAL",
-          "line4": "MATCH"
-        }
+  "navItems": {
+    "home": "Home",
+    "category": "Category",
+    "trendingNews": "Trending News",
+    "recentNews": "Recent News",
+    "clubRankings": "Clubs Ranking",
+    "sportsArticle": "Sports Article"
+  },
+  "hero": {
+    "title": {
+      "line1": "TOP SCORER TO THE",
+      "line2": "FINAL MATCH",
+      "desktop": {
+        "line1": "TOP",
+        "line2": "SCORER TO",
+        "line3": "THE FINAL",
+        "line4": "MATCH"
+      }
+    },
+    "description": "The EuroLeague Finals Top Scorer is the individual award for the player that gained the highest points in the EuroLeague Finals",
+    "button": "Continue Reading",
+    "today": "Today",
+    "news": {
+      "first": {
+        "source": "Race98 - 03 June 2023",
+        "headline": "Ethiopian runners took the top four spots."
       },
-      "description": "The EuroLeague Finals Top Scorer is the individual award for the player that gained the highest points in the EuroLeague Finals",
-      "button": "Continue Reading",
-      "today": "Today",
-      "news": {
-        "first": {
-          "source": "Race98 - 03 June 2023",
-          "headline": "Ethiopian runners took the top four spots."
-        },
-        "second": {
-          "source": "• 01 Jun 2023",
-          "headline": "Indy Car Detroit: Dixon quickest in second practice"
-        }
+      "second": {
+        "source": "• 01 Jun 2023",
+        "headline": "Indy Car Detroit: Dixon quickest in second practice"
       }
     }
+  },
+  "category": {
+    "category": "Category",
+    "football": "FOOTBALL",
+    "basketball": "BASKET\nBALL",
+    "carSport": "CAR SPORT",
+    "tableTennis": "TABLE\nTENNIS"
+  },
+  "news": {
+    "trending": "Trending News",
+    "cycling": "Cycling",
+    "discoverMemberBenefits": "DISCOVER THE MEMBER BENEFITS OF USA CYCLING!",
+    "featureDate": "Debits - 03 June 2023",
+    "1": {
+      "title": "6-Year-Old Horse Dies at Belmont Park After Race Injury",
+      "date": "Race98 - 03 June 2023",
+      "description": "NEW YORK—A 6-year-old horse died after being injured in a race at Belmont Park ahead of next week's"
+    },
+    "2": {
+      "title": "Savilia Blunk Embraces Longer Season With World Cup",
+      "date": "JonyLs - 03 June 2023",
+      "description": "Last year, Savilia Blunk took a more conservative approach to her first season as an Elite Class athlete, skipping some"
+    },
+    "3": {
+      "title": "Ryan Garcia is fighting again, this time on social media",
+      "date": "King.F - 03 June 2023",
+      "description": "Boxing star Ryan Garcia and his promoter, Hall of Fame fighter Oscar De La Hoya, reignited their war of words via Twitter on"
+    }
+  },
+  "featureSlider": {
+    "newsItems": {
+      "1": {
+        "tag": "Football",
+        "source": "Agence France-Presse",
+        "date": "04 June 2023",
+        "title": "LIONEL MESSI LEAVING LIGUE 1 TEAM PARIS SAINT-GERMAIN, CLUB CONFIRMS",
+        "description": "The EuroLeague Finals Top Scorer is the individual award for the player that gained the highest points in the EuroLeague Finals"
+      },
+      "2": {
+        "tag": "Basketball",
+        "source": "Sports Center",
+        "date": "03 June 2023",
+        "title": "NBA FINALS SET TO BEGIN WITH DENVER FACING MIAMI HEAT",
+        "description": "The Denver Nuggets will face the Miami Heat in the NBA Finals starting Thursday in what promises to be an exciting matchup"
+      },
+      "3": {
+        "tag": "Tennis",
+        "source": "Roland Garros",
+        "date": "03 June 2023",
+        "title": "SWIATEK AND DJOKOVIC ADVANCE TO FRENCH OPEN QUARTER-FINALS",
+        "description": "Defending champions Iga Swiatek and Novak Djokovic both secured straight-set victories to advance to the quarter-finals"
+      },
+      "4": {
+        "tag": "Formula 1",
+        "source": "F1 News",
+        "date": "05 June 2023",
+        "title": "VERSTAPPEN EXTENDS CHAMPIONSHIP LEAD WITH SPANISH GP VICTORY",
+        "description": "Red Bull's Max Verstappen dominated the Spanish Grand Prix to extend his lead in the drivers' championship"
+      }
+    }
+  },
+  "recentNews": {
+    "title": "Recent News",
+    "featuredNews": {
+      "label": "Day 5 Highlights",
+      "title": "Baku 2023 World Taekwondo Championships"
+    },
+    "news1": {
+      "date": "#Pollar. 87 - 12 July 2023",
+      "title": "Baku 2023 Taekwondo Championships"
+    },
+    "news2": {
+      "date": "#Goft. Toni - 20 July 2023",
+      "title": "Open Championship Royal Liverpool Golf"
+    },
+    "news3": {
+      "date": "#Cricket. Toni - 27 July 2023",
+      "title": "Ireland Tour of England Test 2023"
+    }
+  },
+  "clubRankings": {
+    "heading": "Club Rankings",
+    "1": "Manchester City",
+    "2": "Liverpool",
+    "3": "Chelsea",
+    "4": "Tottenham Hotspur",
+    "5": "Arsenal",
+    "6": "Manchester United"
+  },
+  "articles": {
+    "heading": "Sports Articles",
+    "1": {
+      "category": "Basketball",
+      "author": "Alex Will",
+      "title": "5 Exercises Basketball Players Should Be Using To Develop Strength",
+      "description": "This article was written by Jake Willhoite from Healthlisted.com Strength in basketball isn’t all about a massive body mass or ripped muscles.",
+      "date": "05 June 2023"
+    },
+    "2": {
+      "category": "Hockey",
+      "author": "Paul James",
+      "title": "Golden Knights not to fulfill owner's quest to win Stanley Cup in fifth year",
+      "description": "The Badminton World Federation is developing Air Badminton and the country’s governing body, Philippine Badminton Association.",
+      "date": "08 May 2023"
+    },
+    "3": {
+      "category": "Badminton",
+      "author": "Emily Landis",
+      "title": "'Outdoor' Badminton Gets Support From Local Federation",
+      "description": "The Badminton World Federation is developing Air Badminton and the country’s governing body, Philippine Badminton Association.",
+      "date": "04 April 2023"
+    },
+    "4": {
+      "category": "Football",
+      "author": "Mark Johnson",
+      "title": "Premier League announces summer schedule for pre-season tournaments",
+      "description": "This article was written by Jake Willhoite from Healthlisted.com Strength in basketball isn’t all about a massive body mass or ripped muscles.",
+      "date": "14 August 2023"
+    },
+    "5": {
+      "category": "Tennis",
+      "author": "Sarah Parker",
+      "title": "Wimbledon preparations affected by unusual British weather",
+      "description": "The Badminton World Federation is developing Air Badminton and the country’s governing body, Philippine Badminton Association.",
+      "date": "22 May 2023"
+    },
+    "6": {
+      "category": "Swimming",
+      "author": "David Chen",
+      "title": "New Olympic-sized pool opens in downtown metro area",
+      "description": "The Badminton World Federation is developing Air Badminton and the country’s governing body, Philippine Badminton Association.",
+      "date": "29 September 2023"
+    },
+    "7": {
+      "category": "Golf",
+      "author": "James Wilson",
+      "title": "PGA Tour announces new tournament format for next season",
+      "description": "The Badminton World Federation is developing Air Badminton and the country’s governing body, Philippine Badminton Association.",
+      "date": "01 January 2024"
+    },
+    "8": {
+      "category": "Athletics",
+      "author": "Lisa Brown",
+      "title": "Local sprinter breaks regional record at university championships",
+      "description": "The Badminton World Federation is developing Air Badminton and the country’s governing body, Philippine Badminton Association.",
+      "date": "14 August 2023"
+    },
+    "9": {
+      "category": "Cricket",
+      "author": "Raj Patel",
+      "title": "T20 World Cup qualifiers see surprising upsets in group stages",
+      "description": "This article was written by Jake Willhoite from Healthlisted.com Strength in basketball isn’t all about a massive body mass or ripped muscles.",
+      "date": "29 September 2023"
+    }
+  },
+  "form":{
+    "contactUs": "Contact us",
+    "description": "Send us a message using the contact form below, and we'll get back to you in 24 hours.",
+    "thankYou": "Thank you! Your message has been submitted.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "placeholderName": "Jane Smith",
+    "placeholderEmail": "tonjrv@email.com",
+    "placeholderMessage": "Leave your message here.",
+    "submit": "Submit"
   }
+}

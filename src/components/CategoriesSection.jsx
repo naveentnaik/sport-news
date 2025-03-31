@@ -1,10 +1,12 @@
 import React, { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import football from "../assets/category/soccer-ball-green-grass-soccer-field-generative-ai 1.png";
 import basketBall from "../assets/category/close-up-basketball-outdoors 1.png";
 import car from "../assets/category/sport-car-is-drifting-track-with-smoke-around-it 1.png";
 import pingpong from "../assets/category/red-ping-pong-racket-sports-equipment 1.png";
 
 const CategoriesSection = () => {
+  const { t } = useTranslation();
   const sectionRef = useRef(null);
   const categoryRefs = useRef([]);
 
@@ -44,7 +46,7 @@ const CategoriesSection = () => {
       ref={sectionRef}
       className="px-3 sm:px-4 lg:px-[115px] pb-6 sm:pb-10"
     >
-      <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 px-1">Category</h3>
+      <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 px-1">{t('category.category')}</h3>
       
       <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         <div 
@@ -53,13 +55,13 @@ const CategoriesSection = () => {
         >
           <div className="h-auto bg-gray-100 p-3 sm:p-4 md:p-6 flex items-center justify-center rounded-lg">
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-b from-gray-800 from-0% to-gray-400 to-70%">
-              FOOTBALL
+              {t('category.football')}
             </h2>
           </div>
           <div className="rounded-lg aspect-square">
             <img
               src={football}
-              alt="Football in goal net"
+              alt={t('category.football')}
               className="w-full h-full object-cover rounded-lg"
             />
           </div>
@@ -72,15 +74,13 @@ const CategoriesSection = () => {
           <div className="rounded-lg aspect-square">
             <img
               src={basketBall}
-              alt="Basketball on court"
+              alt={t('category.basketball')}
               className="w-full h-full object-cover rounded-lg"
             />
           </div>
           <div className="h-auto bg-gray-100 p-3 sm:p-4 md:p-6 flex items-center justify-center rounded-lg">
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-center font-black text-transparent bg-clip-text bg-gradient-to-b from-gray-800 from-0% to-gray-400 to-70%">
-              BASKET
-              <br />
-              BALL
+              {t('category.basketball')}
             </h2>
           </div>
         </div>
@@ -91,13 +91,13 @@ const CategoriesSection = () => {
         >
           <div className="h-auto bg-gray-100 p-3 sm:p-4 md:p-6 flex items-center justify-center rounded-lg">
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-b from-gray-800 from-0% to-gray-400 to-70%">
-              CAR SPORT
+              {t('category.carSport')}
             </h2>
           </div>
           <div className="rounded-lg aspect-square">
             <img
               src={car}
-              alt="Race car drifting"
+              alt={t('category.carSport')}
               className="w-full h-full object-cover rounded-lg"
             />
           </div>
@@ -110,15 +110,13 @@ const CategoriesSection = () => {
           <div className="rounded-lg aspect-square bg-black p-3 sm:p-4">
             <img
               src={pingpong}
-              alt="Table tennis paddle and ball"
+              alt={t('category.tableTennis')}
               className="w-full h-full object-cover rounded-lg"
             />
           </div>
           <div className="h-auto bg-gray-100 p-3 sm:p-4 md:p-6 flex items-center justify-center rounded-lg">
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-center font-black text-transparent bg-clip-text bg-gradient-to-b from-gray-800 from-0% to-gray-400 to-70%">
-              TABLE
-              <br />
-              TENNIS
+              {t('category.tableTennis')}
             </h2>
           </div>
         </div>

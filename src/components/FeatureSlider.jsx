@@ -5,51 +5,50 @@ import "slick-carousel/slick/slick-theme.css";
 import cyclist from "../assets/FeatureCarousel/two-opposing-players-give-handshake-end-game 1.png";
 import { FaArrowRight } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
+import { useTranslation } from 'react-i18next';
+
 
 const FeatureSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef(null);
+  const { t } = useTranslation();
 
   // Sample carousel items
   const carouselItems = [
     {
-      tag: "Football",
-      source: "Agence France-Presse",
-      date: "04 June 2023",
-      title:
-        "LIONEL MESSI LEAVING LIGUE 1 TEAM PARIS SAINT-GERMAIN, CLUB CONFIRMS",
-      description:
-        "The EuroLeague Finals Top Scorer is the individual award for the player that gained the highest points in the EuroLeague Finals",
+      tag: t("featureSlider.newsItems.1.tag"),
+      source: t("featureSlider.newsItems.1.source"),
+      date: t("featureSlider.newsItems.1.date"),
+      title: t("featureSlider.newsItems.1.title"),
+      description: t("featureSlider.newsItems.1.description"),
       image: cyclist
     },
     {
-      tag: "Basketball",
-      source: "Sports Center",
-      date: "03 June 2023",
-      title: "NBA FINALS SET TO BEGIN WITH DENVER FACING MIAMI HEAT",
-      description:
-        "The Denver Nuggets will face the Miami Heat in the NBA Finals starting Thursday in what promises to be an exciting matchup",
+      tag: t("featureSlider.newsItems.2.tag"),
+      source: t("featureSlider.newsItems.2.source"),
+      date: t("featureSlider.newsItems.2.date"),
+      title: t("featureSlider.newsItems.2.title"),
+      description: t("featureSlider.newsItems.2.description"),
       image: cyclist
     },
     {
-      tag: "Tennis",
-      source: "Roland Garros",
-      date: "03 June 2023",
-      title: "SWIATEK AND DJOKOVIC ADVANCE TO FRENCH OPEN QUARTER-FINALS",
-      description:
-        "Defending champions Iga Swiatek and Novak Djokovic both secured straight-set victories to advance to the quarter-finals",
+      tag: t("featureSlider.newsItems.3.tag"),
+      source: t("featureSlider.newsItems.3.source"),
+      date: t("featureSlider.newsItems.3.date"),
+      title: t("featureSlider.newsItems.3.title"),
+      description: t("featureSlider.newsItems.3.description"),
       image: cyclist
     },
     {
-      tag: "Formula 1",
-      source: "F1 News",
-      date: "05 June 2023",
-      title: "VERSTAPPEN EXTENDS CHAMPIONSHIP LEAD WITH SPANISH GP VICTORY",
-      description:
-        "Red Bull's Max Verstappen dominated the Spanish Grand Prix to extend his lead in the drivers' championship",
-      image: cyclist,
-    },
+      tag: t("featureSlider.newsItems.4.tag"),
+      source: t("featureSlider.newsItems.4.source"),
+      date: t("featureSlider.newsItems.4.date"),
+      title: t("featureSlider.newsItems.4.title"),
+      description: t("featureSlider.newsItems.4.description"),
+      image: cyclist
+    }
   ];
+  
 
   // Settings for the slider
   const settings = {
