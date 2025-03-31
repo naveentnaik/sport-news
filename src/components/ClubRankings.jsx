@@ -84,15 +84,15 @@ const ClubRankings = ({ rankingsData }) => {
   const dataToRender = rankingsData || defaultRankingsData;
 
   return (
-    <div>
-      <h3 className="text-2xl font-semibold mb-4">{t("clubRankings.heading")}</h3>
-      <div className="px-4 pb-1 pt-1 bg-[#EBEEF3] rounded">
-        <table className="w-full border-collapse">
+    <div className="h-full flex flex-col gap-4" >
+      <h3 className="text-2xl font-semibold ">{t("clubRankings.heading")}</h3>
+      <div className="h-full min-h-[275px] max-h-[300px] content-center px-2 sm:px-4 pb-1 pt-1 bg-[#EBEEF3] rounded">
+        <table className=" w-full border-collapse">
           <thead>
             <tr className="border-b border-gray-300">
               <th className="p-2 text-left text-sm font-semibold">Club</th>
               {tableHeaders.map((header) => (
-                <th key={header.key} className="p-2 text-sm font-semibold text-center">
+                <th key={header.key} className="p-2 text-xs sm:text-sm font-semibold text-center">
                   {header.label}
                 </th>
               ))}

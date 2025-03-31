@@ -10,7 +10,7 @@ const RecentNews = () => {
   return (
     <div className="w-full">
       <h3 className="text-2xl font-semibold mb-4">{t("recentNews.title")}</h3>
-      <div className="flex flex-col lg:flex-row gap-4 md:gap-6">
+      <div className=" flex flex-col lg:flex-row gap-4 md:gap-6">
         {/* Featured news - stacks on mobile, side by side on larger screens */}
         <div className="w-full lg:w-1/2 relative rounded-sm overflow-hidden bg-gray-200 shadow-md mb-4 md:mb-0">
           <div className="w-full">
@@ -31,9 +31,9 @@ const RecentNews = () => {
         </div>
 
         {/* News cards section */}
-        <div className="w-full lg:w-1/2">
-          <div className="rounded-sm bg-[#EBEEF3] mx-auto flex">
-            <div className="flex flex-col gap-3 md:gap-[14px] flex-1 p-3">
+        <div className=" w-full lg:w-1/2">
+          <div className="h-full flex rounded-sm bg-[#EBEEF3] mx-auto ">
+            <div className="h-full flex justify-evenly flex-col gap-3 md:gap-[14px] flex-1 p-3">
               {/* News Card 1 */}
               <div className="flex flex-row">
                 <img

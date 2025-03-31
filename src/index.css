@@ -14,7 +14,6 @@
     src: url('/fonts/Sequel Sans Black Body.ttf') ;
   }
  
-
   @theme {
      --font-darkline: Darkline, "sans-serif";
      --font-dm-sans: DM Sans, "sans-serif";

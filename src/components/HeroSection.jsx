@@ -9,6 +9,7 @@ const HeroSection = () => {
   const { t } = useTranslation();
   const [screenSize, setScreenSize] = useState("large");
   const [isLoaded, setIsLoaded] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -24,10 +25,24 @@ const HeroSection = () => {
     handleResize();
     window.addEventListener("resize", handleResize);
 
-    // Set isLoaded to true after a short delay to trigger animations
-    setTimeout(() => {
-      setIsLoaded(true);
-    }, 100);
+    // Preload all images
+    const imagesToPreload = [basketballPlayer, africanWoman, raceCar, ball];
+    let loadedCount = 0;
+
+    imagesToPreload.forEach(src => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => {
+        loadedCount++;
+        if (loadedCount === imagesToPreload.length) {
+          setImagesLoaded(true);
+          // Set isLoaded to true after all images have loaded
+          setTimeout(() => {
+            setIsLoaded(true);
+          }, 100);
+        }
+      };
+    });
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -76,20 +91,35 @@ const HeroSection = () => {
 
         {/* Player Image with Background */}
         <div className="relative flex justify-center mb-6">
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 opacity-30">
+          {/* Enhanced background ball with better visibility */}
+          <div 
+            className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 transition-opacity duration-1000 ${
+              imagesLoaded ? "opacity-30" : "opacity-0"
+            }`}
+            style={{ 
+              width: '100%', 
+              maxWidth: '300px', 
+              height: 'auto',
+              transform: 'translate(-50%, -50%) scale(1.2)' 
+            }}
+          >
             <img
               src={ball}
               alt="Basketball background"
-              className="filter grayscale w-64"
+              className="filter grayscale w-full h-auto"
+              loading="eager"
             />
           </div>
           <img
             src={basketballPlayer}
             alt="Basketball player in action"
-            className="relative z-10 max-w-full h-auto animate-float"
+            className={`relative z-10 max-w-full h-auto transition-opacity duration-700 ${
+              imagesLoaded ? "opacity-100" : "opacity-0"
+            }`}
             style={{
               animation: "float 4s ease-in-out infinite",
             }}
+            loading="eager"
           />
         </div>
 
@@ -115,7 +145,10 @@ const HeroSection = () => {
               <img
                 src={africanWoman}
                 alt="Runner"
-                className="w-full h-78 object-cover rounded-md"
+                className={`w-full h-78 object-cover rounded-md transition-opacity duration-700 ${
+                  imagesLoaded ? "opacity-100" : "opacity-0"
+                }`}
+                loading="eager"
               />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-gray-100/90 from-60% to-gray-100/0 to-100%">
                 <div className="text-gray-500 mb-1 text-xs">
@@ -132,7 +165,10 @@ const HeroSection = () => {
               <img
                 src={raceCar}
                 alt="Race car"
-                className="w-full h-78 object-cover rounded-md"
+                className={`w-full h-78 object-cover rounded-md transition-opacity duration-700 ${
+                  imagesLoaded ? "opacity-100" : "opacity-0"
+                }`}
+                loading="eager"
               />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-gray-100/90 from-60% to-gray-100/0 to-100%">
                 <div className="text-gray-500 mb-1 text-xs">
@@ -174,12 +210,15 @@ const HeroSection = () => {
       <div className="w-8/12 relative mb-8 md:mb-0">
         <div className="relative">
           {/* Ball background - moved this higher in the DOM for proper layering */}
-          <div className="absolute left-0 bottom-[8%] z-0">
+          <div className={`absolute left-0 bottom-[8%] z-0 transition-opacity duration-1000 ${
+              imagesLoaded ? "opacity-100" : "opacity-0"
+            }`}>
             <img
               src={ball}
               alt="Basketball background"
               className="filter grayscale"
               width={570}
+              loading="eager"
             />
           </div>
 
@@ -243,9 +282,13 @@ const HeroSection = () => {
               width={575}
               src={basketballPlayer}
               alt="Basketball player in action"
+              className={`transition-opacity duration-700 ${
+                imagesLoaded ? "opacity-100" : "opacity-0"
+              }`}
               style={{
                 animation: "float 4s ease-in-out infinite",
               }}
+              loading="eager"
             />
           </div>
         </div>
@@ -279,7 +322,10 @@ const HeroSection = () => {
                 height={233}
                 src={africanWoman}
                 alt="Runner"
-                className="object-cover rounded-md mb-2"
+                className={`object-cover rounded-md mb-2 transition-opacity duration-700 ${
+                  imagesLoaded ? "opacity-100" : "opacity-0"
+                }`}
+                loading="eager"
               />
             </div>
 
@@ -304,7 +350,10 @@ const HeroSection = () => {
               height={233}
               src={raceCar}
               alt="Race car"
-              className="object-cover rounded-md"
+              className={`object-cover rounded-md transition-opacity duration-700 ${
+                imagesLoaded ? "opacity-100" : "opacity-0"
+              }`}
+              loading="eager"
             />
 
             {/* Text overlay at bottom */}
