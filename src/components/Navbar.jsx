@@ -1,22 +1,36 @@
 import { useState } from "react";
-import { IoSearchOutline } from "react-icons/io5";
+import { useTranslation } from "react-i18next";
 import { HiMenu, HiX } from "react-icons/hi";
+import { MdTranslate, MdKeyboardArrowDown } from "react-icons/md";
 
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
   const [activeNavItem, setActiveNavItem] = useState("Home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
 
   const navItems = [
     { name: "Home", id: "home" },
     { name: "Category", id: "category" },
     { name: "Trending News", id: "trending-news" },
     { name: "Recent News", id: "recent-news" },
-    { name: "Clubs Ranking", id: "recent-news" }, // Clubs Ranking uses Recent News section
+    { name: "Clubs Ranking", id: "recent-news" },
     { name: "Sports Article", id: "sports-article" },
+  ];
+
+  const languages = [
+    { code: "en", name: "English" },
+    { code: "kn", name: "ಕನ್ನಡ" },
+    { code: "te", name: "తెలుగు" }
   ];
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
+    setLanguageDropdownOpen(false);
+  };
+
+  const toggleLanguageDropdown = () => {
+    setLanguageDropdownOpen(!languageDropdownOpen);
   };
 
   const handleScroll = (id) => {
@@ -26,6 +40,11 @@ const Navbar = () => {
       setActiveNavItem(id);
       setMobileMenuOpen(false);
     }
+  };
+
+  const changeLanguage = (langCode) => {
+    i18n.changeLanguage(langCode);
+    setLanguageDropdownOpen(false);
   };
 
   return (
@@ -51,20 +70,60 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Search Button */}
-        <div className="hidden lg:flex">
-          <button className="flex items-center gap-2 bg-[#B8C2CE] text-white px-3 py-2 rounded text-sm font-dm-sans">
-            <IoSearchOutline />
-            <span>Search</span>
+        {/* Translation Button - Desktop */}
+        <div className="hidden lg:block relative">
+          <button 
+            className="flex items-center gap-2 bg-[#B8C2CE] text-white px-3 py-2 rounded text-sm font-dm-sans"
+            onClick={toggleLanguageDropdown}
+          >
+            <MdTranslate />
+            <span>{languages.find(lang => lang.code === i18n.language)?.name || "English"}</span>
+            <MdKeyboardArrowDown className={`transition-transform ${languageDropdownOpen ? 'rotate-180' : ''}`} />
           </button>
+          {languageDropdownOpen && (
+            <div className="absolute right-0 top-full mt-1 bg-white shadow-md rounded-md py-2 w-32 z-30">
+              {languages.map((lang) => (
+                <button
+                  key={lang.code}
+                  className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${
+                    i18n.language === lang.code ? "font-semibold" : ""
+                  }`}
+                  onClick={() => changeLanguage(lang.code)}
+                >
+                  {lang.name}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button and Translation */}
         <div className="lg:hidden flex items-center gap-4">
-          <button className="flex items-center gap-1 bg-[#B8C2CE] text-white px-2 py-1 rounded text-sm font-dm-sans">
-            <IoSearchOutline size={16} />
-            <span className="sr-only md:not-sr-only">Search</span>
-          </button>
+          <div className="relative">
+            <button 
+              className="flex items-center gap-1 bg-[#B8C2CE] text-white px-2 py-2 rounded text-sm font-dm-sans"
+              onClick={toggleLanguageDropdown}
+            >
+              <MdTranslate size={16} />
+              <span className="sr-only md:not-sr-only">{i18n.language.toUpperCase()}</span>
+              <MdKeyboardArrowDown className={`transition-transform ${languageDropdownOpen ? 'rotate-180' : ''}`} />
+            </button>
+            {languageDropdownOpen && (
+              <div className="absolute right-0 top-full mt-1 bg-white shadow-md rounded-md py-2 w-32 z-10">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${
+                      i18n.language === lang.code ? "font-semibold" : ""
+                    }`}
+                    onClick={() => changeLanguage(lang.code)}
+                  >
+                    {lang.name}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
           <button onClick={toggleMobileMenu} className="text-gray-700">
             {mobileMenuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
           </button>

@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import basketballPlayer from "../assets/hero/basketball-player-action-sunset 1.png";
 import africanWoman from "../assets/hero/beautiful-young-african-woman-sports-clothing-running-against-gray-background 1.png";
 import raceCar from "../assets/hero/fastaccelerating-race-car-formula-one-racing-amid-sunset-generative-ai 1.png";
 import ball from "../assets/hero/basketball_sport_icon_in_minimalist_3d_render_2 1.png";
 
 const HeroSection = () => {
+  const { t } = useTranslation();
   const [screenSize, setScreenSize] = useState('large');
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -18,8 +21,13 @@ const HeroSection = () => {
       }
     };
     
-    handleResize(); // Check on initial load
+    handleResize(); 
     window.addEventListener('resize', handleResize);
+    
+    // Set isLoaded to true after a short delay to trigger animations
+    setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
     
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -30,12 +38,16 @@ const HeroSection = () => {
   if (screenSize === 'small' || screenSize === 'medium') {
     return (
       <section className="px-4 py-8">
-        {/* Hero Title */}
+        {/* Hero Title with animation */}
         <div className="text-center mb-6">
           <h2 className="text-4xl font-black leading-tight font-sequel-sans tracking-tighter">
-            <span className="text-gray-800">TOP SCORER TO THE</span>
+            <span className={`inline-block text-gray-800 transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`}>
+              {t('hero.title.line1')}
+            </span>
             <br />
-            <span className="text-gray-800">FINAL MATCH</span>
+            <span className={`inline-block text-gray-800 transition-all duration-700 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              {t('hero.title.line2')}
+            </span>
           </h2>
         </div>
         
@@ -51,19 +63,20 @@ const HeroSection = () => {
           <img
             src={basketballPlayer}
             alt="Basketball player in action"
-            className="relative z-10 max-w-full h-auto"
+            className="relative z-10 max-w-full h-auto animate-float"
+            style={{
+              animation: "float 4s ease-in-out infinite"
+            }}
           />
         </div>
         
         {/* Description and Button */}
         <div className="text-center mb-8">
           <p className="text-md text-gray-800 mb-4">
-            The EuroLeague Finals Top Scorer is the individual award for
-            the player that gained the highest points in the EuroLeague
-            Finals
+            {t('hero.description')}
           </p>
           <button className="bg-[#262626] text-lg text-white px-6 py-2 uppercase rounded-md">
-            Continue Reading
+            {t('hero.button')}
           </button>
         </div>
         
@@ -71,7 +84,7 @@ const HeroSection = () => {
         <div className="mt-8">
           <div className="flex justify-center mb-4">
             <span className="bg-gray-200 text-gray-400 px-4 py-1 rounded-sm">
-              Today
+              {t('hero.today')}
             </span>
           </div>
           
@@ -85,10 +98,10 @@ const HeroSection = () => {
               />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-gray-100/90 from-60% to-gray-100/0 to-100%">
                 <div className="text-gray-500 mb-1 text-xs">
-                  Race98 - 03 June 2023
+                  {t('hero.news.first.source')}
                 </div>
                 <h2 className="text-sm text-gray-900 leading-tight">
-                  Ethiopian runners took the top four spots.
+                  {t('hero.news.first.headline')}
                 </h2>
               </div>
             </div>
@@ -101,19 +114,37 @@ const HeroSection = () => {
                 className="w-full h-78 object-cover rounded-md"
               />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-gray-100/90 from-60% to-gray-100/0 to-100%">
-                <div className="text-gray-500 mb-1 text-xs">• 01 Jun 2023</div>
+                <div className="text-gray-500 mb-1 text-xs">{t('hero.news.second.source')}</div>
                 <h2 className="text-sm text-gray-900 leading-tight">
-                  Indy Car Detroit: Dixon quickest in second practice
+                  {t('hero.news.second.headline')}
                 </h2>
               </div>
             </div>
           </div>
         </div>
+        
+        {/* Add the keyframes for the floating animation */}
+        <style jsx>{`
+          @keyframes float {
+            0% {
+              transform: translateY(0px);
+              filter: brightness(1);
+            }
+            50% {
+              transform: translateY(-10px);
+              filter: brightness(1.1);
+            }
+            100% {
+              transform: translateY(0px);
+              filter: brightness(1);
+            }
+          }
+        `}</style>
       </section>
     );
   }
   
-  // Large screens - keep original exactly as is
+  // Large screens - keep original layout but add title animation
   return (
     <section className="pt-12 pr-[115px] flex flex-row">
       {/* Left side - main content with circular background */}
@@ -129,15 +160,23 @@ const HeroSection = () => {
             />
           </div>
 
-          {/* Text overlaid on the circular background */}
-          <div className="absolute top-10 pl-[115px] z-10 font-sequel-sans tracking-tighter ">
+          {/* Text overlaid on the circular background with animation */}
+          <div className="absolute top-10 pl-[115px] z-10 font-sequel-sans tracking-tighter">
             <h2 className="text-7xl font-black leading-[1.0]">
-              <span className="text-gray-800">TOP</span>
+              <span className={`inline-block text-gray-800 transition-all duration-700 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-16'}`}>
+                {t('hero.title.desktop.line1')}
+              </span>
               <br />
-              <span className="text-gray-800">SCORER TO</span>
+              <span className={`inline-block text-gray-800 transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-16'}`}>
+                {t('hero.title.desktop.line2')}
+              </span>
               <br />
-              <span className="text-gray-800">
-                THE FINAL <br /> MATCH
+              <span className={`inline-block text-gray-800 transition-all duration-700 delay-400 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-16'}`}>
+                {t('hero.title.desktop.line3')}
+              </span>
+              <br />
+              <span className={`inline-block text-gray-800 transition-all duration-700 delay-600 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-16'}`}>
+                {t('hero.title.desktop.line4')}
               </span>
             </h2>
           </div>
@@ -148,19 +187,20 @@ const HeroSection = () => {
               width={575}
               src={basketballPlayer}
               alt="Basketball player in action"
+              style={{
+                animation: "float 4s ease-in-out infinite"
+              }}
             />
           </div>
         </div>
 
         {/* Description and button below the image */}
         <div className="w-fit mt-4 relative left-[65%] bottom-25 font-dm-sans">
-          <p className="text-md text-gray-800 mb-4">
-            The EuroLeague Finals Top Scorer is the <br /> individual award for
-            the player that gained <br /> the highest points in the EuroLeague
-            Finals
+          <p className="text-md text-gray-800 mb-4 max-w-[330px]">
+            {t('hero.description')}
           </p>
           <button className="bg-[#262626] text-lg text-white px-6 py-2 uppercase rounded-md">
-            Continue Reading
+            {t('hero.button')}
           </button>
         </div>
       </div>
@@ -171,7 +211,7 @@ const HeroSection = () => {
         <div className="space-y-6">
           <div className="mb-4">
             <span className="bg-gray-200 text-gray-400 px-4 py-1 rounded-sm">
-              Today
+              {t('hero.today')}
             </span>
           </div>
 
@@ -191,12 +231,12 @@ const HeroSection = () => {
             <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-gray-100/90 from-60% to-gray-100/0 to-100%">
               {/* Race info and date */}
               <div className="text-gray-500 mb-1 text-xs">
-                Race98 - 03 June 2023
+                {t('hero.news.first.source')}
               </div>
 
               {/* Headline */}
               <h2 className="text-sm text-gray-900 leading-tight">
-                Ethiopian runners took the top four spots.
+                {t('hero.news.first.headline')}
               </h2>
             </div>
           </div>
@@ -214,16 +254,34 @@ const HeroSection = () => {
             {/* Text overlay at bottom */}
             <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-gray-100/90 from-60% to-gray-100/0 to-100%">
               {/* Race info and date */}
-              <div className="text-gray-500 mb-1 text-xs">• 01 Jun 2023</div>
+              <div className="text-gray-500 mb-1 text-xs">{t('hero.news.second.source')}</div>
 
               {/* Headline */}
               <h2 className="text-sm text-gray-900 leading-tight">
-                Indy Car Detroit: Dixon quickest in second practice
+                {t('hero.news.second.headline')}
               </h2>
             </div>
           </div>
         </div>
       </div>
+      
+      {/* Add the keyframes for the floating animation */}
+      <style jsx>{`
+        @keyframes float {
+          0% {
+            transform: translateY(0px);
+            filter: brightness(1);
+          }
+          50% {
+            transform: translateY(-10px);
+            filter: brightness(1.1);
+          }
+          100% {
+            transform: translateY(0px);
+            filter: brightness(1);
+          }
+        }
+      `}</style>
     </section>
   );
 };

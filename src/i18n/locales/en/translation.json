@@ -1,0 +1,27 @@
+{
+    "hero": {
+      "title": {
+        "line1": "TOP SCORER TO THE",
+        "line2": "FINAL MATCH",
+        "desktop": {
+          "line1": "TOP",
+          "line2": "SCORER TO",
+          "line3": "THE FINAL",
+          "line4": "MATCH"
+        }
+      },
+      "description": "The EuroLeague Finals Top Scorer is the individual award for the player that gained the highest points in the EuroLeague Finals",
+      "button": "Continue Reading",
+      "today": "Today",
+      "news": {
+        "first": {
+          "source": "Race98 - 03 June 2023",
+          "headline": "Ethiopian runners took the top four spots."
+        },
+        "second": {
+          "source": "• 01 Jun 2023",
+          "headline": "Indy Car Detroit: Dixon quickest in second practice"
+        }
+      }
+    }
+  }

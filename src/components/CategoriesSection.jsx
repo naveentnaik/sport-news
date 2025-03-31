@@ -1,17 +1,56 @@
+import React, { useEffect, useRef } from 'react';
 import football from "../assets/category/soccer-ball-green-grass-soccer-field-generative-ai 1.png";
 import basketBall from "../assets/category/close-up-basketball-outdoors 1.png";
 import car from "../assets/category/sport-car-is-drifting-track-with-smoke-around-it 1.png";
 import pingpong from "../assets/category/red-ping-pong-racket-sports-equipment 1.png";
 
 const CategoriesSection = () => {
+  const sectionRef = useRef(null);
+  const categoryRefs = useRef([]);
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.2
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        categoryRefs.current.forEach((category, index) => {
+          setTimeout(() => {
+            const animationClass = index % 2 === 0 ? 'animate-fadeInFromBottom' : 'animate-fadeInFromTop';
+            category.classList.add(animationClass);
+            category.style.opacity = 1;
+          }, index * 300); 
+        });
+        observer.disconnect();
+      }
+    }, options);
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (observer) {
+        observer.disconnect();
+      }
+    };
+  }, []);
+
   return (
-    <div className="px-3 sm:px-4 lg:px-[115px] pb-6 sm:pb-10">
+    <div 
+      ref={sectionRef}
+      className="px-3 sm:px-4 lg:px-[115px] pb-6 sm:pb-10"
+    >
       <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 px-1">Category</h3>
       
-      {/* Always minimum 2 cards per row */}
       <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-        {/* Football */}
-        <div className="flex flex-col gap-3 sm:gap-4 w-full">
+        <div 
+          ref={el => categoryRefs.current[0] = el} 
+          className="flex flex-col gap-3 sm:gap-4 w-full opacity-0 transition-all duration-700"
+        >
           <div className="h-auto bg-gray-100 p-3 sm:p-4 md:p-6 flex items-center justify-center rounded-lg">
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-b from-gray-800 from-0% to-gray-400 to-70%">
               FOOTBALL
@@ -26,8 +65,10 @@ const CategoriesSection = () => {
           </div>
         </div>
 
-        {/* Basketball */}
-        <div className="flex flex-col gap-3 sm:gap-4 w-full">
+        <div 
+          ref={el => categoryRefs.current[1] = el} 
+          className="flex flex-col gap-3 sm:gap-4 w-full opacity-0 transition-all duration-700"
+        >
           <div className="rounded-lg aspect-square">
             <img
               src={basketBall}
@@ -44,8 +85,10 @@ const CategoriesSection = () => {
           </div>
         </div>
 
-        {/* Car Sport */}
-        <div className="flex flex-col gap-3 sm:gap-4 w-full">
+        <div 
+          ref={el => categoryRefs.current[2] = el} 
+          className="flex flex-col gap-3 sm:gap-4 w-full opacity-0 transition-all duration-700"
+        >
           <div className="h-auto bg-gray-100 p-3 sm:p-4 md:p-6 flex items-center justify-center rounded-lg">
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-b from-gray-800 from-0% to-gray-400 to-70%">
               CAR SPORT
@@ -60,8 +103,10 @@ const CategoriesSection = () => {
           </div>
         </div>
 
-        {/* Table Tennis */}
-        <div className="flex flex-col gap-3 sm:gap-4 w-full">
+        <div 
+          ref={el => categoryRefs.current[3] = el} 
+          className="flex flex-col gap-3 sm:gap-4 w-full opacity-0 transition-all duration-700"
+        >
           <div className="rounded-lg aspect-square bg-black p-3 sm:p-4">
             <img
               src={pingpong}
