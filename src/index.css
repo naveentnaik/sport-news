@@ -9,25 +9,32 @@
 
 body {
   font-family: var(--font-body);
+  line-height: 1.6; 
 }
 
 h1, h2, h3, h4, .headline {
   font-family: var(--font-heading);
- 
+  line-height: 1.2; 
 }
 
+h1 {
+  line-height: 1.1; 
+}
 
+p, li, blockquote {
+  line-height: 1.6; 
+}
 
 @font-face {
-    font-family: Darkline;
-    src: url('/fonts/Darkline.ttf') ;
-  }
+  font-family: Darkline;
+  src: url('/fonts/Darkline.ttf');
+}
 
- 
-  @theme {
-     --font-darkline: Darkline, "sans-serif";
-  }
+@theme {
+  --font-darkline: Darkline, "sans-serif";
+}
 
-  .font-darkline {
-    font-family: 'Darkline', sans-serif;
-  }
+.font-darkline {
+  font-family: 'Darkline', sans-serif;
+  line-height: 1.3; 
+}

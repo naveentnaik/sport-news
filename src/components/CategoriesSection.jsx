@@ -53,12 +53,12 @@ const CategoriesSection = () => {
           ref={el => categoryRefs.current[0] = el} 
           className="flex flex-col gap-3 sm:gap-4 w-full opacity-0 transition-all duration-700"
         >
-          <div className="h-auto bg-gray-100 p-3 sm:p-4 md:p-6 flex items-center justify-center rounded-lg">
+          <div className="flex-1 h-auto bg-gray-100 p-3 sm:p-4 md:p-6 flex items-center justify-center rounded-lg">
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-b from-gray-800 from-0% to-gray-400 to-70%">
               {t('category.football')}
             </h2>
           </div>
-          <div className="rounded-lg aspect-square">
+          <div className="max-md:h-[228px] rounded-lg aspect-square">
             <img
               src={football}
               alt={t('category.football')}
@@ -71,14 +71,14 @@ const CategoriesSection = () => {
           ref={el => categoryRefs.current[1] = el} 
           className="flex flex-col gap-3 sm:gap-4 w-full opacity-0 transition-all duration-700"
         >
-          <div className="lg:h-[228px] rounded-lg aspect-square">
+          <div className="max-md:h-[228px] lg:h-[228px] rounded-lg aspect-square">
             <img
               src={basketBall}
               alt={t('category.basketball')}
               className="w-full h-full object-cover rounded-lg"
             />
           </div>
-          <div className="h-auto bg-gray-100 p-3 sm:p-4 md:p-6 flex items-center justify-center rounded-lg">
+          <div className="flex-1 h-auto bg-gray-100 p-3 sm:p-4 md:p-6 flex items-center justify-center rounded-lg">
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-center font-black text-transparent bg-clip-text bg-gradient-to-b from-gray-800 from-0% to-gray-400 to-70%">
               {t('category.basketball')}
             </h2>
@@ -94,7 +94,7 @@ const CategoriesSection = () => {
               {t('category.carSport')}
             </h2>
           </div>
-          <div className="rounded-lg aspect-square">
+          <div className="max-md:h-[228px] rounded-lg aspect-square">
             <img
               src={car}
               alt={t('category.carSport')}
@@ -107,14 +107,14 @@ const CategoriesSection = () => {
           ref={el => categoryRefs.current[3] = el} 
           className="flex flex-col gap-3 sm:gap-4 w-full opacity-0 transition-all duration-700"
         >
-          <div className="lg:h-[228px] rounded-lg aspect-square bg-black p-3 sm:p-4">
+          <div className="max-md:h-[228px] lg:h-[228px] rounded-lg aspect-square bg-black p-3 sm:p-4">
             <img
               src={pingpong}
               alt={t('category.tableTennis')}
               className="w-full h-full object-cover rounded-lg"
             />
           </div>
-          <div className="h-auto bg-gray-100 p-3 sm:p-4 md:p-6 flex items-center justify-center rounded-lg">
+          <div className="flex-1 h-auto bg-gray-100 p-3 sm:p-4 md:p-6 flex items-center justify-center rounded-lg">
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-center font-black text-transparent bg-clip-text bg-gradient-to-b from-gray-800 from-0% to-gray-400 to-70%">
               {t('category.tableTennis')}
             </h2>
