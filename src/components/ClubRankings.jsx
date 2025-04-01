@@ -87,9 +87,9 @@ const ClubRankings = ({ rankingsData }) => {
         <table className=" w-full border-collapse">
           <thead>
             <tr className="border-b border-gray-300">
-              <th className="p-2 text-left text-sm font-semibold">Club</th>
+              <th className="p-2 text-left text-xs md:text-sm  font-semibold">Club</th>
               {tableHeaders.map((header) => (
-                <th key={header.key} className="p-2 text-[8px] sm:text-sm font-semibold text-center">
+                <th key={header.key} className="p-2 text-[9px] sm:text-sm font-semibold text-center">
                   {header.label}
                 </th>
               ))}
@@ -103,13 +103,13 @@ const ClubRankings = ({ rankingsData }) => {
                   index === dataToRender.length - 1 ? "border-none" : ""
                 }`}
               >
-                <td className="p-2 flex items-center text-xs font-semibold">
+                <td className="p-2 flex items-center text-[9px] font-semibold">
                   <span className="mr-2">{index + 1}</span>
                   <img src={i4} alt="Club Icon" className="w-5 h-5 mr-2" />
                   {club.name}
                 </td>
                 {tableHeaders.map((header) => (
-                  <td key={header.key} className="p-2 text-center text-xs">
+                  <td key={header.key} className="p-2 text-center text-[9px] md:text-xs">
                     {club[header.key]}
                   </td>
                 ))}
