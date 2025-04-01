@@ -72,9 +72,11 @@ function App() {
 
   return (
     <div className="bg-[#F9FAFC]">
-      <Navbar />
+      <div className="lg:min-w-[1210px]">
+        <Navbar />
+      </div>
 
-      <main className="container mx-auto">
+      <main className="lg:min-w-[1210px] container mx-auto">
         <section id="home">
           <HeroSection />
         </section>

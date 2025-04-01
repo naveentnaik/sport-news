@@ -89,7 +89,7 @@ const ClubRankings = ({ rankingsData }) => {
             <tr className="border-b border-gray-300">
               <th className="p-2 text-left text-sm font-semibold">Club</th>
               {tableHeaders.map((header) => (
-                <th key={header.key} className="p-2 text-xs sm:text-sm font-semibold text-center">
+                <th key={header.key} className="p-2 text-[8px] sm:text-sm font-semibold text-center">
                   {header.label}
                 </th>
               ))}
