@@ -72,7 +72,7 @@ const ContactForm = () => {
 
       <form onSubmit={handleSubmit} className="w-full max-w-lg">
         <div className="mb-6">
-          <label htmlFor="name" className="block text-gray-400 mb-2">
+          <label htmlFor="name" className="block text-gray-300 mb-2">
             {t("form.name")}
           </label>
           <input
@@ -94,8 +94,8 @@ const ContactForm = () => {
         </div>
 
         <div className="mb-6">
-          <label htmlFor="email" className="block text-gray-400 mb-2">
-            {t("form.email")}
+          <label htmlFor="email" className="block text-gray-300 mb-2">
+            {t("form.email")} 
           </label>
           <input
             type="email"
@@ -116,7 +116,7 @@ const ContactForm = () => {
         </div>
 
         <div className="mb-6">
-          <label htmlFor="message" className="block text-gray-400 mb-2">
+          <label htmlFor="message" className="block text-gray-300 mb-2">
             {t("form.message")}
           </label>
           <textarea
