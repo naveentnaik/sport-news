@@ -74,7 +74,7 @@ const Navbar = () => {
           {navItems.map((item) => (
             <button
               key={item.id}
-              className={`px-2 py-1 text-sm ${
+              className={`px-2 py-1 text-sm cursor-pointer ${
                 activeNavItem === item.id ? "font-semibold" : "text-gray-600"
               }`}
               onClick={() => handleScroll(item.id)}
@@ -85,9 +85,9 @@ const Navbar = () => {
         </div>
 
         {/* Translation Button - Desktop */}
-        <div className="hidden lg:block relative">
+        <div className="hidden lg:block relative ">
           <button 
-            className="w-28 flex items-center gap-2 bg-[#B8C2CE] text-white px-3 py-2 rounded text-sm font-dm-sans"
+            className="w-28 flex items-center gap-2 bg-[#B8C2CE] text-white px-3 py-2 rounded text-sm font-dm-sans cursor-pointer"
             onClick={toggleLanguageDropdown}
           >
             <MdTranslate />
@@ -97,7 +97,7 @@ const Navbar = () => {
           
           {/* Desktop Language Dropdown with Animation */}
           <div 
-            className={`absolute right-0 top-full mt-1 bg-white shadow-md rounded-md py-2 w-32 z-30 overflow-hidden transition-all duration-300 origin-top ${
+            className={`absolute right-0 top-full mt-1 bg-white shadow-md rounded-md py-2 w-32 z-30 overflow-hidden transition-all duration-300 origin-top  ${
               languageDropdownOpen 
                 ? 'max-h-40 opacity-100' 
                 : 'max-h-0 opacity-0 pointer-events-none'
@@ -106,7 +106,7 @@ const Navbar = () => {
             {languages.map((lang) => (
               <button
                 key={lang.code}
-                className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${
+                className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer ${
                   i18n.language === lang.code ? "font-semibold" : ""
                 }`}
                 onClick={() => changeLanguage(lang.code)}
